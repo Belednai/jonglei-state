@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Contact API Endpoint</title>
+</head>
+<body>
+    <script>
+        // Simple mock API endpoint for contact form submissions
+        if (window.location.pathname.includes('/api/contact')) {
+            // In a real implementation, this would be a proper backend endpoint
+            // For demo purposes, we'll just return a success response
+            document.body.innerHTML = JSON.stringify({
+                success: true,
+                message: "Your message has been received. We will respond within 24 hours.",
+                timestamp: new Date().toISOString()
+            });
+        }
+    </script>
+</body>
+</html>
