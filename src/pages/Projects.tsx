@@ -6,8 +6,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Progress } from "@/components/ui/progress";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { projects } from "@/data/mockData";
 
@@ -50,9 +48,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-8">
         {/* Page Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">Government Projects</h1>
@@ -209,9 +205,7 @@ const Projects = () => {
             <p className="text-muted-foreground">No projects found matching your criteria.</p>
           </div>
         )}
-      </main>
-      <Footer />
-    </div>
+    </main>
   );
 };
 

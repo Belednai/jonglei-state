@@ -2,8 +2,6 @@ import { FileText, Search, Users, Clock, CheckCircle, AlertCircle, Phone, Mail }
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 
 const CitizenPortal = () => {
@@ -100,9 +98,7 @@ const CitizenPortal = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-8">
         {/* Page Header */}
         <div className="text-center mb-8 md:mb-12">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Citizen Portal</h1>
@@ -274,9 +270,7 @@ const CitizenPortal = () => {
             </Card>
           </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+    </main>
   );
 };
 

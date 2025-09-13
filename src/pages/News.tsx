@@ -5,8 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { newsArticles } from "@/data/mockData";
 
@@ -32,9 +30,7 @@ const News = () => {
   const categories = ["Government", "Health", "Education", "Infrastructure", "Agriculture"];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-8">
         {/* Page Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">News & Announcements</h1>
@@ -207,9 +203,7 @@ const News = () => {
             <p className="text-muted-foreground">No articles found matching your criteria.</p>
           </div>
         )}
-      </main>
-      <Footer />
-    </div>
+    </main>
   );
 };
 

@@ -10,8 +10,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Link, useNavigate } from "react-router-dom";
 
 const requestFormSchema = z.object({
@@ -163,9 +161,7 @@ const CitizenPortalNew = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-8">
         {/* Navigation */}
         <div className="mb-6">
           <Button variant="ghost" asChild className="mb-4">
@@ -554,9 +550,7 @@ const CitizenPortalNew = () => {
             </CardContent>
           </Card>
         </div>
-      </main>
-      <Footer />
-    </div>
+    </main>
   );
 };
 

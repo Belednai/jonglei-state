@@ -5,8 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { upcomingEvents } from "@/data/mockData";
 
 const Events = () => {
@@ -73,9 +71,7 @@ const Events = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-8">
         {/* Page Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">Events & Activities</h1>
@@ -293,9 +289,7 @@ const Events = () => {
             ))}
           </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+    </main>
   );
 };
 

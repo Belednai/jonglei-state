@@ -22,8 +22,6 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 interface DashboardStats {
   totalRequests: number;
@@ -160,8 +158,6 @@ const StaffDashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-      
       {/* Staff Navigation Bar */}
       <div className="bg-primary text-primary-foreground py-3 shadow-sm">
         <div className="container mx-auto px-4">
@@ -411,7 +407,6 @@ const StaffDashboard = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

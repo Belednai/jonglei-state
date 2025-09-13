@@ -7,8 +7,6 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Link, useSearchParams } from "react-router-dom";
 
 interface Request {
@@ -218,9 +216,7 @@ const CitizenPortalStatus = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-8">
         {/* Page Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-foreground mb-4">Check Request Status</h1>
@@ -502,9 +498,7 @@ const CitizenPortalStatus = () => {
             </Card>
           </div>
         )}
-      </main>
-      <Footer />
-    </div>
+    </main>
   );
 };
 

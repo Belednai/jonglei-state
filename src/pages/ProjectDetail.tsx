@@ -5,8 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 const projects = [
   {
@@ -151,9 +149,7 @@ const ProjectDetail = () => {
   const budgetPercentage = (project.spent / project.budget) * 100;
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-8">
         {/* Navigation */}
         <div className="mb-6">
           <Button variant="ghost" asChild className="mb-4">
@@ -446,9 +442,7 @@ const ProjectDetail = () => {
             </Card>
           </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+    </main>
   );
 };
 

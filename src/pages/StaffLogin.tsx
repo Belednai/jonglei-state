@@ -101,35 +101,35 @@ const StaffLogin = () => {
   const isAccountLocked = loginAttempts >= 5;
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4 sm:p-6 lg:p-8">
-      <main className="w-full max-w-md mx-auto py-8">
+    <div className="min-h-screen bg-background flex items-center justify-center p-3 sm:p-6 lg:p-8">
+      <main className="w-full max-w-md mx-auto py-4 sm:py-8">
           {/* Page Header */}
-          <div className="text-center mb-8">
-            <div className="flex items-center justify-center w-16 h-16 bg-primary rounded-lg mx-auto mb-4">
-              <Building2 className="h-8 w-8 text-primary-foreground" />
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-lg mx-auto mb-3 sm:mb-4">
+              <Building2 className="h-6 w-6 sm:h-8 sm:w-8 text-primary-foreground" />
             </div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">Staff Login</h1>
-            <p className="text-sm sm:text-base text-muted-foreground">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mb-2">Staff Login</h1>
+            <p className="text-sm sm:text-base text-muted-foreground px-2">
               Access the staff portal with your government credentials
             </p>
           </div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Lock className="mr-2 h-5 w-5" />
+          <Card className="mx-1 sm:mx-0">
+            <CardHeader className="pb-4 sm:pb-6 px-4 sm:px-6">
+              <CardTitle className="flex items-center text-lg sm:text-xl">
+                <Lock className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 Secure Login
               </CardTitle>
-              <CardDescription>
+              <CardDescription className="text-sm">
                 Enter your email and password to access the staff portal
               </CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="px-4 sm:px-6 pb-6">
               {/* Account Lockout Warning */}
               {loginAttempts >= 3 && !isAccountLocked && (
-                <Alert className="mb-6">
+                <Alert className="mb-4 sm:mb-6">
                   <AlertCircle className="h-4 w-4" />
-                  <AlertDescription>
+                  <AlertDescription className="text-sm">
                     Warning: {5 - loginAttempts} login attempts remaining before account lockout.
                   </AlertDescription>
                 </Alert>
@@ -137,9 +137,9 @@ const StaffLogin = () => {
 
               {/* Account Locked */}
               {isAccountLocked && (
-                <Alert variant="destructive" className="mb-6">
+                <Alert variant="destructive" className="mb-4 sm:mb-6">
                   <AlertCircle className="h-4 w-4" />
-                  <AlertDescription>
+                  <AlertDescription className="text-sm">
                     Account temporarily locked due to multiple failed login attempts. 
                     Please contact IT support or try again later.
                   </AlertDescription>
@@ -147,9 +147,9 @@ const StaffLogin = () => {
               )}
 
               {/* Demo Credentials Info */}
-              <Alert className="mb-6">
+              <Alert className="mb-4 sm:mb-6">
                 <AlertCircle className="h-4 w-4" />
-                <AlertDescription>
+                <AlertDescription className="text-sm">
                   <strong>Demo Credentials:</strong><br />
                   Email: admin@jonglei.gov.ss<br />
                   Password: admin123
@@ -157,26 +157,26 @@ const StaffLogin = () => {
               </Alert>
 
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 w-full">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 sm:space-y-6 w-full">
                   <FormField
                     control={form.control}
                     name="email"
                     render={({ field }) => (
-                      <FormItem className="w-full">
-                        <FormLabel className="text-sm font-medium">Email Address</FormLabel>
+                      <FormItem className="w-full space-y-2">
+                        <FormLabel className="text-sm font-medium text-foreground">Email Address</FormLabel>
                         <FormControl>
                           <div className="relative w-full">
                             <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                             <Input 
                               type="email"
                               placeholder="your.email@jonglei.gov.ss"
-                              className="pl-10 pr-4 w-full touch-friendly text-base"
+                              className="pl-10 pr-4 w-full h-12 text-base border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors"
                               {...field}
                               disabled={isSubmitting || isAccountLocked}
                             />
                           </div>
                         </FormControl>
-                        <FormMessage />
+                        <FormMessage className="text-xs" />
                       </FormItem>
                     )}
                   />
@@ -185,15 +185,15 @@ const StaffLogin = () => {
                     control={form.control}
                     name="password"
                     render={({ field }) => (
-                      <FormItem className="w-full">
-                        <FormLabel className="text-sm font-medium">Password</FormLabel>
+                      <FormItem className="w-full space-y-2">
+                        <FormLabel className="text-sm font-medium text-foreground">Password</FormLabel>
                         <FormControl>
                           <div className="relative w-full">
                             <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                             <Input 
                               type={showPassword ? "text" : "password"}
                               placeholder="Enter your password"
-                              className="pl-10 pr-10 w-full touch-friendly text-base"
+                              className="pl-10 pr-12 w-full h-12 text-base border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors"
                               {...field}
                               disabled={isSubmitting || isAccountLocked}
                             />
@@ -201,39 +201,40 @@ const StaffLogin = () => {
                               type="button"
                               variant="ghost"
                               size="sm"
-                              className="absolute right-0 top-0 h-full px-3"
+                              className="absolute right-1 top-1/2 transform -translate-y-1/2 h-8 w-8 p-0 hover:bg-transparent"
                               onClick={() => setShowPassword(!showPassword)}
                               disabled={isSubmitting || isAccountLocked}
                               aria-label={showPassword ? "Hide password" : "Show password"}
                             >
                               {showPassword ? (
-                                <EyeOff className="h-4 w-4" />
+                                <EyeOff className="h-4 w-4 text-muted-foreground" />
                               ) : (
-                                <Eye className="h-4 w-4" />
+                                <Eye className="h-4 w-4 text-muted-foreground" />
                               )}
                             </Button>
                           </div>
                         </FormControl>
-                        <FormMessage />
+                        <FormMessage className="text-xs" />
                       </FormItem>
                     )}
                   />
 
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0">
                     <FormField
                       control={form.control}
                       name="rememberMe"
                       render={({ field }) => (
-                        <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                        <FormItem className="flex flex-row items-center space-x-3 space-y-0">
                           <FormControl>
                             <Checkbox
                               checked={field.value}
                               onCheckedChange={field.onChange}
                               disabled={isSubmitting || isAccountLocked}
+                              className="h-4 w-4"
                             />
                           </FormControl>
-                          <div className="space-y-1 leading-none">
-                            <FormLabel className="text-sm font-normal">
+                          <div className="leading-none">
+                            <FormLabel className="text-sm font-normal text-foreground cursor-pointer">
                               Remember me for 30 days
                             </FormLabel>
                           </div>
@@ -244,7 +245,7 @@ const StaffLogin = () => {
                     <Button 
                       type="button" 
                       variant="link" 
-                      className="px-0 text-sm"
+                      className="px-0 text-sm text-primary hover:text-primary/80 self-start sm:self-auto"
                       asChild
                     >
                       <Link to="/staff/forgot-password">Forgot password?</Link>
@@ -253,7 +254,7 @@ const StaffLogin = () => {
 
                   <Button 
                     type="submit" 
-                    className="w-full h-12 touch-friendly text-base font-semibold"
+                    className="w-full h-12 text-base font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-colors"
                     disabled={isSubmitting || isAccountLocked}
                   >
                     {isSubmitting ? (
@@ -269,16 +270,16 @@ const StaffLogin = () => {
               </Form>
 
               {/* Additional Links */}
-              <div className="mt-6 text-center space-y-2">
+              <div className="mt-6 text-center space-y-3">
                 <p className="text-sm text-muted-foreground">
                   Don't have an account?{" "}
-                  <Button variant="link" className="px-0" asChild>
+                  <Button variant="link" className="px-0 text-sm text-primary hover:text-primary/80" asChild>
                     <Link to="/staff/register">Request Access</Link>
                   </Button>
                 </p>
                 <p className="text-sm text-muted-foreground">
                   Having trouble logging in?{" "}
-                  <Button variant="link" className="px-0" asChild>
+                  <Button variant="link" className="px-0 text-sm text-primary hover:text-primary/80" asChild>
                     <Link to="/contact">Contact IT Support</Link>
                   </Button>
                 </p>
@@ -287,8 +288,8 @@ const StaffLogin = () => {
           </Card>
 
           {/* Security Notice */}
-          <div className="mt-6 text-center">
-            <p className="text-xs text-muted-foreground">
+          <div className="mt-4 sm:mt-6 text-center px-4">
+            <p className="text-xs text-muted-foreground leading-relaxed">
               This is a secure government system. Unauthorized access is prohibited 
               and may be subject to criminal and civil penalties.
             </p>

@@ -4,8 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 const newsArticles = [
   {
@@ -119,9 +117,7 @@ const NewsDetail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-8">
         {/* Navigation */}
         <div className="mb-6">
           <Button variant="ghost" asChild className="mb-4">
@@ -339,9 +335,7 @@ const NewsDetail = () => {
             </Card>
           </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+    </main>
   );
 };
 
