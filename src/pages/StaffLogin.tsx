@@ -101,8 +101,8 @@ const StaffLogin = () => {
   const isAccountLocked = loginAttempts >= 5;
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4 sm:p-6">
-      <main className="w-full max-w-md mx-auto">
+    <div className="min-h-screen bg-background flex items-center justify-center p-4 sm:p-6 lg:p-8">
+      <main className="w-full max-w-md mx-auto py-8">
           {/* Page Header */}
           <div className="text-center mb-8">
             <div className="flex items-center justify-center w-16 h-16 bg-primary rounded-lg mx-auto mb-4">

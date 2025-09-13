@@ -264,14 +264,14 @@ const Header = () => {
             </nav>
 
             {/* Search Bar */}
-            <div className="hidden lg:block w-48">
+            <div className="hidden lg:block w-52">
               <form onSubmit={handleSearch} className="relative">
                 <input
                   type="text"
                   placeholder="Search services..."
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all duration-300 touch-friendly-sm"
+                  className="w-full pl-10 pr-12 py-2.5 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all duration-300 touch-friendly-sm bg-background/50 backdrop-blur-sm"
                   aria-label="Search government services"
                   aria-describedby="search-description"
                   role="searchbox"
@@ -282,10 +282,10 @@ const Header = () => {
                 </span>
                 <button
                   type="submit"
-                  className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary transition-colors duration-300 p-1 rounded-md hover:bg-primary/10"
                   aria-label="Search button"
                 >
-                  <Search className="h-5 w-5" />
+                  <Search className="h-4 w-4" />
                 </button>
                 
                 {/* Desktop Search Results */}
@@ -321,13 +321,13 @@ const Header = () => {
               </form>
             </div>
 
-            {/* CTA Buttons - Compact */}
-            <div className="hidden lg:flex items-center space-x-2 ml-6">
+            {/* CTA Buttons - Improved Spacing */}
+            <div className="hidden lg:flex items-center space-x-3 ml-8">
               {quickActions.map((action) => (
-                <Button key={action.name} variant={action.variant} size="sm" className="google-hover-lift h-10 px-5 rounded-xl font-medium shadow-sm hover:shadow-md" asChild>
+                <Button key={action.name} variant={action.variant} size="sm" className="google-hover-lift h-11 px-6 rounded-xl font-medium shadow-sm hover:shadow-md transition-all duration-300" asChild>
                   <Link to={action.href} className="flex items-center space-x-2 group">
                     <action.icon className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
-                    <span>{action.name}</span>
+                    <span className="font-semibold">{action.name}</span>
                   </Link>
                 </Button>
               ))}
@@ -367,17 +367,17 @@ const Header = () => {
                     placeholder="Search services..."
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all duration-300 touch-friendly text-base"
+                    className="w-full pl-10 pr-12 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all duration-300 touch-friendly text-base bg-background/50 backdrop-blur-sm"
                     aria-label="Search government services on mobile"
                     role="searchbox"
                     autoComplete="off"
                   />
                   <button
                     type="submit"
-                    className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary transition-colors duration-300 p-1.5 rounded-md hover:bg-primary/10"
                     aria-label="Search button"
                   >
-                    <Search className="h-5 w-5" />
+                    <Search className="h-4 w-4" />
                   </button>
                 </form>
                 
@@ -457,12 +457,12 @@ const Header = () => {
                   )}
                 </div>
               ))}
-              <div className="flex flex-col space-y-3 pt-4 border-t border-border/50 px-2 pb-4">
+              <div className="flex flex-col space-y-4 pt-6 border-t border-border/50 px-2 pb-6">
                 {quickActions.map((action) => (
-                  <Button key={action.name} variant={action.variant} size="default" className="h-11 rounded-xl font-medium touch-friendly" asChild>
-                    <Link to={action.href} onClick={() => setIsMobileMenuOpen(false)}>
-                      <action.icon className="h-4 w-4 mr-2" />
-                      {action.name}
+                  <Button key={action.name} variant={action.variant} size="default" className="h-12 rounded-xl font-semibold touch-friendly shadow-sm hover:shadow-md transition-all duration-300" asChild>
+                    <Link to={action.href} onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-center space-x-2">
+                      <action.icon className="h-4 w-4" />
+                      <span>{action.name}</span>
                     </Link>
                   </Button>
                 ))}
