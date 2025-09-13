@@ -174,7 +174,7 @@ const StaffLogin = () => {
                             <Input 
                               type="email"
                               placeholder="your.email@jonglei.gov.ss"
-                              className="pl-10"
+                              className="pl-10 touch-friendly"
                               {...field}
                               disabled={isSubmitting || isAccountLocked}
                             />

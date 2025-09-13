@@ -255,7 +255,7 @@ const CitizenPortalNew = () => {
                         />
                       </div>
 
-                      <div className="grid md:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <FormField
                           control={form.control}
                           name="phone"
@@ -263,7 +263,7 @@ const CitizenPortalNew = () => {
                             <FormItem>
                               <FormLabel>Phone Number *</FormLabel>
                               <FormControl>
-                                <Input placeholder="+211XXXXXXXXX" {...field} />
+                                <Input placeholder="+211XXXXXXXXX" {...field} className="touch-friendly" />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -277,7 +277,7 @@ const CitizenPortalNew = () => {
                             <FormItem>
                               <FormLabel>Email Address (Optional)</FormLabel>
                               <FormControl>
-                                <Input type="email" placeholder="your.email@example.com" {...field} />
+                                <Input type="email" placeholder="your.email@example.com" {...field} className="touch-friendly" />
                               </FormControl>
                               <FormMessage />
                             </FormItem>

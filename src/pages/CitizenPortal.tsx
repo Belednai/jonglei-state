@@ -104,21 +104,21 @@ const CitizenPortal = () => {
       <Header />
       <main className="container mx-auto px-4 py-8">
         {/* Page Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-foreground mb-4">Citizen Portal</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        <div className="text-center mb-8 md:mb-12">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Citizen Portal</h1>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Your gateway to government services. Submit requests, track applications, 
             and access important documents - all in one convenient location.
           </p>
         </div>
 
         {/* Quick Stats */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12">
           {quickStats.map((stat, index) => {
             const IconComponent = stat.icon;
             return (
               <Card key={index}>
-                <CardContent className="p-6">
+                <CardContent className="p-4 md:p-6">
                   <div className="flex items-center space-x-3 mb-2">
                     <div className="bg-primary/10 p-2 rounded-lg">
                       <IconComponent className="h-5 w-5 text-primary" />
@@ -136,7 +136,7 @@ const CitizenPortal = () => {
         </div>
 
         {/* Main Services */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (

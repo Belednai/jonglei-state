@@ -181,14 +181,14 @@ const Header = () => {
 
         {/* Main Navigation */}
         <div className="gov-container">
-          <div className="flex justify-between items-center py-6">
+          <div className="flex justify-between items-center py-4 sm:py-6">
             {/* Logo and Title - Clean and concise */}
-            <Link to="/" className="flex items-center space-x-4 group">
-              <div className="flex items-center justify-center w-14 h-14 bg-white rounded-2xl group-hover:shadow-lg group-hover:scale-105 transition-all duration-300 shadow-sm border border-gray-200 relative overflow-hidden">
+            <Link to="/" className="flex items-center space-x-2 sm:space-x-4 group">
+              <div className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 bg-white rounded-xl sm:rounded-2xl group-hover:shadow-lg group-hover:scale-105 transition-all duration-300 shadow-sm border border-gray-200 relative overflow-hidden">
                 <img 
                   src={FlagImage} 
                   alt="Jonglei State Flag" 
-                  className="h-10 w-10 object-contain group-hover:scale-110 transition-transform duration-300 relative z-10"
+                  className="h-6 w-6 sm:h-10 sm:w-10 object-contain group-hover:scale-110 transition-transform duration-300 relative z-10"
                   onError={(e) => {
                     console.log('Image failed to load:', e.target.src);
                     e.target.style.display = 'none';
@@ -198,7 +198,7 @@ const Header = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div>
-                <h1 className="font-display text-xl font-bold text-foreground group-hover:text-primary transition-all duration-300 tracking-tight">
+                <h1 className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-all duration-300 tracking-tight">
                   Jonglei State
                 </h1>
               </div>
@@ -337,16 +337,16 @@ const Header = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="lg:hidden h-11 w-11 p-0 rounded-xl touch-friendly"
+              className="lg:hidden h-10 w-10 p-0 rounded-lg touch-friendly"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? "Close mobile menu" : "Open mobile menu"}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-navigation"
             >
               {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-5 w-5" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-5 w-5" />
               )}
             </Button>
           </div>
@@ -355,19 +355,19 @@ const Header = () => {
           {isMobileMenuOpen && (
             <nav 
               id="mobile-navigation" 
-              className="lg:hidden border-t border-border/50 py-6 space-y-6 animate-fade-in"
+              className="lg:hidden border-t border-border/50 py-4 space-y-4 animate-fade-in max-h-[calc(100vh-120px)] overflow-y-auto"
               aria-label="Mobile navigation menu"
               role="navigation"
             >
               {/* Mobile Search */}
-              <div className="px-4">
+              <div className="px-2">
                 <form onSubmit={handleSearch} className="relative">
                   <input
                     type="text"
                     placeholder="Search services..."
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all duration-300 touch-friendly"
+                    className="w-full pl-10 pr-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all duration-300 touch-friendly text-base"
                     aria-label="Search government services on mobile"
                     role="searchbox"
                     autoComplete="off"
@@ -416,14 +416,14 @@ const Header = () => {
               {/* Mobile Home Button */}
               <Link
                 to="/"
-                className="flex items-center space-x-4 text-foreground/80 hover:text-primary transition-colors duration-300 font-semibold py-3 text-lg"
+                className="flex items-center space-x-3 text-foreground/80 hover:text-primary transition-colors duration-300 font-semibold py-3 text-base px-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <div className="bg-white p-2 rounded-lg border border-gray-200 shadow-sm">
                   <img 
                     src={FlagImage} 
                     alt="Jonglei State Flag" 
-                    className="h-6 w-6 object-contain"
+                    className="h-5 w-5 object-contain"
                   />
                 </div>
                 <span>Home</span>
@@ -433,7 +433,7 @@ const Header = () => {
                 <div key={item.name}>
                   <Link
                     to={item.href}
-                    className="flex items-center space-x-4 text-foreground/80 hover:text-primary transition-colors duration-300 font-semibold py-3 text-lg"
+                    className="flex items-center space-x-3 text-foreground/80 hover:text-primary transition-colors duration-300 font-semibold py-3 text-base px-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <div className="bg-primary/10 p-2 rounded-lg">
@@ -442,12 +442,12 @@ const Header = () => {
                     <span>{item.name}</span>
                   </Link>
                   {item.children && (
-                    <div className="ml-12 mt-3 space-y-3">
+                    <div className="ml-8 mt-2 space-y-2">
                       {item.children.map((child) => (
                         <Link
                           key={child.name}
                           to={child.href}
-                          className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-300 py-2 font-medium"
+                          className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-300 py-2 font-medium px-2"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {child.name}
@@ -457,16 +457,15 @@ const Header = () => {
                   )}
                 </div>
               ))}
-              <div className="flex flex-col space-y-4 pt-6 border-t border-border/50">
+              <div className="flex flex-col space-y-3 pt-4 border-t border-border/50 px-2 pb-4">
                 {quickActions.map((action) => (
-                  <Button key={action.name} variant={action.variant} size="default" className="h-12 rounded-xl font-medium" asChild>
+                  <Button key={action.name} variant={action.variant} size="default" className="h-11 rounded-xl font-medium touch-friendly" asChild>
                     <Link to={action.href} onClick={() => setIsMobileMenuOpen(false)}>
-                      <action.icon className="h-5 w-5 mr-3" />
+                      <action.icon className="h-4 w-4 mr-2" />
                       {action.name}
                     </Link>
                   </Button>
                 ))}
-
               </div>
             </nav>
           )}

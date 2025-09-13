@@ -69,49 +69,49 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-4 gap-6">
-              <Card className="gov-card google-hover-lift text-center p-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              <Card className="gov-card google-hover-lift text-center p-4 md:p-6">
                 <CardContent className="p-0">
-                  <div className="bg-primary/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <Users className="h-8 w-8 text-primary" />
+                  <div className="bg-primary/10 p-3 md:p-4 rounded-full w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 flex items-center justify-center">
+                    <Users className="h-6 w-6 md:h-8 md:w-8 text-primary" />
                   </div>
-                  <div className="font-display text-3xl font-bold text-foreground mb-2">
+                  <div className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
                     {formatNumber(totalPopulation)}
                   </div>
                   <p className="text-muted-foreground">Total Population</p>
                 </CardContent>
               </Card>
               
-              <Card className="gov-card google-hover-lift text-center p-6">
+              <Card className="gov-card google-hover-lift text-center p-4 md:p-6">
                 <CardContent className="p-0">
-                  <div className="bg-primary/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <Building2 className="h-8 w-8 text-primary" />
+                  <div className="bg-primary/10 p-3 md:p-4 rounded-full w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 flex items-center justify-center">
+                    <Building2 className="h-6 w-6 md:h-8 md:w-8 text-primary" />
                   </div>
-                  <div className="font-display text-3xl font-bold text-foreground mb-2">
+                  <div className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
                     {counties.length}
                   </div>
                   <p className="text-muted-foreground">Counties</p>
                 </CardContent>
               </Card>
               
-              <Card className="gov-card google-hover-lift text-center p-6">
+              <Card className="gov-card google-hover-lift text-center p-4 md:p-6">
                 <CardContent className="p-0">
-                  <div className="bg-primary/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <DollarSign className="h-8 w-8 text-primary" />
+                  <div className="bg-primary/10 p-3 md:p-4 rounded-full w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 flex items-center justify-center">
+                    <DollarSign className="h-6 w-6 md:h-8 md:w-8 text-primary" />
                   </div>
-                  <div className="font-display text-3xl font-bold text-foreground mb-2">
+                  <div className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
                     ${(totalBudget / 1000000).toFixed(1)}M
                   </div>
                   <p className="text-muted-foreground">Annual Budget</p>
                 </CardContent>
               </Card>
               
-              <Card className="gov-card google-hover-lift text-center p-6">
+              <Card className="gov-card google-hover-lift text-center p-4 md:p-6">
                 <CardContent className="p-0">
-                  <div className="bg-primary/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <TrendingUp className="h-8 w-8 text-primary" />
+                  <div className="bg-primary/10 p-3 md:p-4 rounded-full w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 flex items-center justify-center">
+                    <TrendingUp className="h-6 w-6 md:h-8 md:w-8 text-primary" />
                   </div>
-                  <div className="font-display text-3xl font-bold text-foreground mb-2">
+                  <div className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
                     {totalStaff}
                 </div>
                   <p className="text-muted-foreground">Government Staff</p>

@@ -301,7 +301,7 @@ const Contact = () => {
                       )}
                     />
 
-                    <div className="grid md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <FormField
                         control={form.control}
                         name="name"
@@ -313,6 +313,7 @@ const Contact = () => {
                                 placeholder="Enter your full name" 
                                 {...field}
                                 disabled={isSubmitting}
+                                className="touch-friendly"
                               />
                             </FormControl>
                             <FormMessage />
@@ -331,6 +332,7 @@ const Contact = () => {
                                 placeholder="+211 XXX XXX XXX" 
                                 {...field}
                                 disabled={isSubmitting}
+                                className="touch-friendly"
                               />
                             </FormControl>
                             <FormMessage />
@@ -351,6 +353,7 @@ const Contact = () => {
                               placeholder="your.email@example.com" 
                               {...field}
                               disabled={isSubmitting}
+                              className="touch-friendly"
                             />
                           </FormControl>
                           <FormMessage />
@@ -358,7 +361,7 @@ const Contact = () => {
                       )}
                     />
 
-                    <div className="grid md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <FormField
                         control={form.control}
                         name="category"
@@ -367,7 +370,7 @@ const Contact = () => {
                             <FormLabel>Category *</FormLabel>
                             <Select onValueChange={field.onChange} defaultValue={field.value} disabled={isSubmitting}>
                               <FormControl>
-                                <SelectTrigger>
+                                <SelectTrigger className="touch-friendly">
                                   <SelectValue placeholder="Select a category" />
                                 </SelectTrigger>
                               </FormControl>
@@ -395,6 +398,7 @@ const Contact = () => {
                                 placeholder="Brief subject of your message" 
                                 {...field}
                                 disabled={isSubmitting}
+                                className="touch-friendly"
                               />
                             </FormControl>
                             <FormMessage />
@@ -412,7 +416,7 @@ const Contact = () => {
                           <FormControl>
                             <Textarea 
                               placeholder="Please provide detailed information about your inquiry or request..."
-                              className="min-h-[120px]"
+                              className="min-h-[120px] touch-friendly"
                               {...field}
                               disabled={isSubmitting}
                             />
@@ -424,7 +428,7 @@ const Contact = () => {
 
                     <Button 
                       type="submit" 
-                      className="w-full"
+                      className="w-full h-12 touch-friendly"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
