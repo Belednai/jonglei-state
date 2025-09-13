@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { AlertTriangle, X, Bell, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -51,9 +52,15 @@ const mockAlerts: Alert[] = [
 ];
 
 export function AlertsBar() {
+  const location = useLocation();
   const [alerts, setAlerts] = useState<Alert[]>(mockAlerts);
   const [isVisible, setIsVisible] = useState(true);
   const [activeAlertIndex, setActiveAlertIndex] = useState(0);
+
+  // Don't show alerts on staff login page
+  if (location.pathname === "/staff/login") {
+    return null;
+  }
 
   useEffect(() => {
     // Auto-advance alerts every 8 seconds

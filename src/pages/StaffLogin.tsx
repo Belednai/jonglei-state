@@ -10,8 +10,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Checkbox } from "@/components/ui/checkbox";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { useToast } from "@/hooks/use-toast";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { useNavigate, Link } from "react-router-dom";
 
 const loginFormSchema = z.object({
@@ -103,17 +101,15 @@ const StaffLogin = () => {
   const isAccountLocked = loginAttempts >= 5;
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="container mx-auto px-4 py-8">
-        <div className="max-w-md mx-auto">
+    <div className="min-h-screen bg-background flex items-center justify-center p-4 sm:p-6">
+      <main className="w-full max-w-md mx-auto">
           {/* Page Header */}
           <div className="text-center mb-8">
             <div className="flex items-center justify-center w-16 h-16 bg-primary rounded-lg mx-auto mb-4">
               <Building2 className="h-8 w-8 text-primary-foreground" />
             </div>
-            <h1 className="text-3xl font-bold text-foreground mb-2">Staff Login</h1>
-            <p className="text-muted-foreground">
+            <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">Staff Login</h1>
+            <p className="text-sm sm:text-base text-muted-foreground">
               Access the staff portal with your government credentials
             </p>
           </div>
@@ -161,20 +157,20 @@ const StaffLogin = () => {
               </Alert>
 
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 w-full">
                   <FormField
                     control={form.control}
                     name="email"
                     render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email Address</FormLabel>
+                      <FormItem className="w-full">
+                        <FormLabel className="text-sm font-medium">Email Address</FormLabel>
                         <FormControl>
-                          <div className="relative">
+                          <div className="relative w-full">
                             <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                             <Input 
                               type="email"
                               placeholder="your.email@jonglei.gov.ss"
-                              className="pl-10 touch-friendly"
+                              className="pl-10 pr-4 w-full touch-friendly text-base"
                               {...field}
                               disabled={isSubmitting || isAccountLocked}
                             />
@@ -189,15 +185,15 @@ const StaffLogin = () => {
                     control={form.control}
                     name="password"
                     render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Password</FormLabel>
+                      <FormItem className="w-full">
+                        <FormLabel className="text-sm font-medium">Password</FormLabel>
                         <FormControl>
-                          <div className="relative">
+                          <div className="relative w-full">
                             <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                             <Input 
                               type={showPassword ? "text" : "password"}
                               placeholder="Enter your password"
-                              className="pl-10 pr-10"
+                              className="pl-10 pr-10 w-full touch-friendly text-base"
                               {...field}
                               disabled={isSubmitting || isAccountLocked}
                             />
@@ -257,7 +253,7 @@ const StaffLogin = () => {
 
                   <Button 
                     type="submit" 
-                    className="w-full"
+                    className="w-full h-12 touch-friendly text-base font-semibold"
                     disabled={isSubmitting || isAccountLocked}
                   >
                     {isSubmitting ? (
@@ -297,9 +293,7 @@ const StaffLogin = () => {
               and may be subject to criminal and civil penalties.
             </p>
           </div>
-        </div>
       </main>
-      <Footer />
     </div>
   );
 };
