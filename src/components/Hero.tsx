@@ -42,10 +42,9 @@ const Hero = () => {
               
               {/* Main Heading */}
               <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-white">
-                <span className="block mb-2 sm:mb-4">Welcome to the State of</span>
-                <span className="text-white block">Jonglei State</span>
-                <span className="block mt-2 sm:mt-4 text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white/90">
-                  YOUR JONGLEI STARTS HERE!
+                <span className="block mb-2 sm:mb-4">Welcome to Jonglei State</span>
+                <span className="block mt-2 sm:mt-4 text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white/90 italic">
+                  "Where Wilderness and Willpower Converge"
                 </span>
               </h1>
               
