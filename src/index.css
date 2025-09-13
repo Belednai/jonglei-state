@@ -15,17 +15,17 @@
 
 @layer base {
   :root {
-    /* 2025 Brand Color Palette - Based on #063970 */
-    --color-primary-50: 216 100% 97%;   /* Very light blue-gray */
-    --color-primary-100: 216 95% 92%;   /* Light blue-gray */
-    --color-primary-200: 216 90% 84%;   /* Soft blue */
-    --color-primary-300: 216 85% 70%;   /* Medium light blue */
-    --color-primary-400: 216 80% 55%;   /* Medium blue */
-    --color-primary-500: 216 100% 22%;  /* #063970 - Official brand color */
-    --color-primary-600: 216 100% 20%;  /* Slightly darker */
-    --color-primary-700: 216 100% 18%;  /* Darker blue */
-    --color-primary-800: 216 100% 15%;  /* Very dark blue */
-    --color-primary-900: 216 100% 12%;  /* Deepest blue */
+    /* 2025 Brand Color Palette - Based on #2596be */
+    --color-primary-50: 198 100% 97%;   /* Very light blue */
+    --color-primary-100: 198 95% 92%;   /* Light blue */
+    --color-primary-200: 198 90% 84%;   /* Soft blue */
+    --color-primary-300: 198 85% 70%;   /* Medium light blue */
+    --color-primary-400: 198 80% 55%;   /* Medium blue */
+    --color-primary-500: 198 67% 45%;   /* #2596be - Official brand color */
+    --color-primary-600: 198 70% 38%;   /* Slightly darker */
+    --color-primary-700: 198 75% 30%;   /* Darker blue */
+    --color-primary-800: 198 80% 22%;   /* Very dark blue */
+    --color-primary-900: 198 85% 15%;   /* Deepest blue */
 
     /* Enhanced Neutral Gray Scale */
     --color-gray-50: 220 14% 98%;
@@ -39,36 +39,36 @@
     --color-gray-800: 220 39% 13%;
     --color-gray-900: 220 43% 4%;
 
-    /* Brand-Based Accent Colors - All derived from #063970 */
-    --color-accent-50: 216 95% 98%;
-    --color-accent-100: 216 90% 92%;
-    --color-accent-200: 216 85% 84%;
-    --color-accent-300: 216 80% 72%;
-    --color-accent-400: 216 75% 58%;
-    --color-accent-500: 216 70% 48%;
-    --color-accent-600: 216 65% 40%;
-    --color-accent-700: 216 60% 32%;
-    --color-accent-800: 216 55% 26%;
-    --color-accent-900: 216 50% 22%;
+    /* Brand-Based Accent Colors - All derived from #2596be */
+    --color-accent-50: 198 95% 98%;
+    --color-accent-100: 198 90% 92%;
+    --color-accent-200: 198 85% 84%;
+    --color-accent-300: 198 80% 72%;
+    --color-accent-400: 198 75% 58%;
+    --color-accent-500: 198 70% 48%;
+    --color-accent-600: 198 65% 40%;
+    --color-accent-700: 198 60% 32%;
+    --color-accent-800: 198 55% 26%;
+    --color-accent-900: 198 50% 22%;
 
-    /* Brand-Based Semantic Colors - All derived from #063970 */
-    --color-success-50: 216 95% 97%;
-    --color-success-100: 216 90% 94%;
-    --color-success-500: 216 100% 35%;
-    --color-success-600: 216 100% 30%;
-    --color-success-700: 216 100% 25%;
+    /* Brand-Based Semantic Colors - All derived from #2596be */
+    --color-success-50: 198 95% 97%;
+    --color-success-100: 198 90% 94%;
+    --color-success-500: 198 100% 35%;
+    --color-success-600: 198 100% 30%;
+    --color-success-700: 198 100% 25%;
 
-    --color-warning-50: 216 95% 97%;
-    --color-warning-100: 216 90% 94%;
-    --color-warning-500: 216 100% 40%;
-    --color-warning-600: 216 100% 35%;
-    --color-warning-700: 216 100% 30%;
+    --color-warning-50: 198 95% 97%;
+    --color-warning-100: 198 90% 94%;
+    --color-warning-500: 198 100% 40%;
+    --color-warning-600: 198 100% 35%;
+    --color-warning-700: 198 100% 30%;
 
-    --color-danger-50: 216 95% 97%;
-    --color-danger-100: 216 90% 94%;
-    --color-danger-500: 216 100% 45%;
-    --color-danger-600: 216 100% 40%;
-    --color-danger-700: 216 100% 35%;
+    --color-danger-50: 198 95% 97%;
+    --color-danger-100: 198 90% 94%;
+    --color-danger-500: 198 100% 45%;
+    --color-danger-600: 198 100% 40%;
+    --color-danger-700: 198 100% 35%;
 
     /* Core Design Tokens */
     --background: 0 0% 100%;
@@ -183,8 +183,8 @@
     --shadow-xl: 0 16px 32px -8px rgb(0 0 0 / 0.12), 0 8px 16px -8px rgb(0 0 0 / 0.08);
     --shadow-2xl: 0 24px 48px -12px rgb(0 0 0 / 0.18), 0 16px 32px -16px rgb(0 0 0 / 0.12);
     --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.04);
-    --shadow-glow: 0 0 24px rgb(21 76 121 / 0.15);
-    --shadow-brand: 0 8px 32px -8px rgb(21 76 121 / 0.2);
+    --shadow-glow: 0 0 24px rgb(37 150 190 / 0.15);
+    --shadow-brand: 0 8px 32px -8px rgb(37 150 190 / 0.2);
 
     /* Z-Index Scale */
     --z-dropdown: 1000;
@@ -365,9 +365,9 @@
       --background: 0 0% 100%;
       --foreground: 0 0% 0%;
       --border: 0 0% 0%;
-      --primary: 216 100% 25%;
+      --primary: 198 67% 45%;
       --primary-foreground: 0 0% 100%;
-      --ring: 216 100% 25%;
+      --ring: 198 67% 45%;
     }
 
 
@@ -454,7 +454,7 @@
 
   .gov-card:hover {
     @apply border-primary/40 transform scale-105 shadow-xl;
-    box-shadow: 0 20px 25px -5px rgba(6, 57, 112, 0.1), 0 10px 10px -5px rgba(6, 57, 112, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(37, 150, 190, 0.1), 0 10px 10px -5px rgba(37, 150, 190, 0.04);
   }
 
   .gov-button-primary {
@@ -486,7 +486,7 @@
 
   .gov-button-primary:hover {
     @apply transform scale-105 shadow-xl;
-    box-shadow: 0 20px 25px -5px rgba(6, 57, 112, 0.2), 0 10px 10px -5px rgba(6, 57, 112, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(37, 150, 190, 0.2), 0 10px 10px -5px rgba(37, 150, 190, 0.1);
   }
 
   .gov-header .gov-button-primary:hover,
@@ -513,7 +513,7 @@
 
   .gov-button-secondary:hover {
     @apply transform scale-105 shadow-lg;
-    box-shadow: 0 10px 15px -3px rgba(6, 57, 112, 0.1), 0 4px 6px -2px rgba(6, 57, 112, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(37, 150, 190, 0.1), 0 4px 6px -2px rgba(37, 150, 190, 0.05);
   }
 
   .gov-button-outline {
@@ -528,8 +528,8 @@
 
   .gov-button-outline:hover {
     @apply transform scale-105;
-    background: linear-gradient(135deg, rgba(6, 57, 112, 0.08) 0%, rgba(6, 57, 112, 0.12) 100%);
-    box-shadow: 0 8px 12px -2px rgba(6, 57, 112, 0.1);
+    background: linear-gradient(135deg, rgba(37, 150, 190, 0.08) 0%, rgba(37, 150, 190, 0.12) 100%);
+    box-shadow: 0 8px 12px -2px rgba(37, 150, 190, 0.1);
   }
 
   .gov-gradient-primary {
@@ -1030,7 +1030,7 @@
     right: 0;
     bottom: 0;
     background-image: 
-      radial-gradient(circle at 1px 1px, rgba(6, 57, 112, 0.03) 1px, transparent 0);
+      radial-gradient(circle at 1px 1px, rgba(37, 150, 190, 0.03) 1px, transparent 0);
     background-size: 20px 20px;
     pointer-events: none;
   }
@@ -1047,7 +1047,7 @@
     right: 0;
     bottom: 0;
     background-image: 
-      radial-gradient(circle at 2px 2px, rgba(6, 57, 112, 0.08) 1px, transparent 0);
+      radial-gradient(circle at 2px 2px, rgba(37, 150, 190, 0.08) 1px, transparent 0);
     background-size: 30px 30px;
     pointer-events: none;
   }
@@ -1055,7 +1055,7 @@
   /* Glass Effect Utilities */
   .glass-effect {
     @apply bg-white/80 backdrop-blur-md border border-white/20;
-    box-shadow: 0 8px 32px 0 rgba(6, 57, 112, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(37, 150, 190, 0.08);
   }
 
   .glass-effect-dark {
