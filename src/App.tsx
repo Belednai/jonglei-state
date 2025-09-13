@@ -4,6 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LayoutWrapper from "./components/layouts/LayoutWrapper";
+import ErrorBoundary from "./components/ErrorBoundary";
+import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Departments from "./pages/Departments";
@@ -23,38 +25,43 @@ const queryClient = new QueryClient();
 
 const AppContent = () => {
   return (
-    <LayoutWrapper>
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/departments" element={<Departments />} />
-        <Route path="/departments/:id" element={<DepartmentDetail />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/projects/:id" element={<ProjectDetail />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/news/:id" element={<NewsDetail />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/citizen-portal" element={<CitizenPortal />} />
-        <Route path="/citizen-portal/new" element={<CitizenPortalNew />} />
-        <Route path="/citizen-portal/status" element={<CitizenPortalStatus />} />
-        <Route path="/staff/login" element={<StaffLogin />} />
-        <Route path="/staff/dashboard" element={<StaffDashboard />} />
-        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </LayoutWrapper>
+    <>
+      <ScrollToTop />
+      <LayoutWrapper>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/departments" element={<Departments />} />
+          <Route path="/departments/:id" element={<DepartmentDetail />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/news/:id" element={<NewsDetail />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/citizen-portal" element={<CitizenPortal />} />
+          <Route path="/citizen-portal/new" element={<CitizenPortalNew />} />
+          <Route path="/citizen-portal/status" element={<CitizenPortalStatus />} />
+          <Route path="/staff/login" element={<StaffLogin />} />
+          <Route path="/staff/dashboard" element={<StaffDashboard />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </LayoutWrapper>
+    </>
   );
 };
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <AppContent />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <ErrorBoundary>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter basename="/">
+          <AppContent />
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </ErrorBoundary>
 );
 
 export default App;

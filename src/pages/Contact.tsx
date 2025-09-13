@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Send, User, MessageSquare, Building } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -510,20 +511,20 @@ const Contact = () => {
               </CardHeader>
               <CardContent className="space-y-3">
                 <Button className="w-full" variant="outline" asChild>
-                  <a href="/citizen-portal/new">
+                  <Link to="/citizen-portal/new">
                     <User className="mr-2 h-4 w-4" />
                     Submit Citizen Request
-                  </a>
+                  </Link>
                 </Button>
                 <Button className="w-full" variant="outline" asChild>
-                  <a href="/citizen-portal/status">
+                  <Link to="/citizen-portal/status">
                     Track Application Status
-                  </a>
+                  </Link>
                 </Button>
                 <Button className="w-full" variant="outline" asChild>
-                  <a href="/departments">
+                  <Link to="/departments">
                     View All Departments
-                  </a>
+                  </Link>
                 </Button>
               </CardContent>
             </Card>

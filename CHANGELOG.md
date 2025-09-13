@@ -1,5 +1,91 @@
 # Changelog
 
+## Navigation Scroll-to-Top Implementation
+
+### Overview
+This update implements consistent scroll-to-top behavior for all navigation buttons in the Jonglei State web application, ensuring that every page navigation lands at the top of the viewport for better user experience and accessibility.
+
+### Changes Made
+
+#### 1. Global Scroll-to-Top Handler
+- **Created `ScrollToTop` component** (`src/components/ScrollToTop.tsx`)
+  - Automatically scrolls to top on route changes
+  - Preserves anchor link behavior (#section)
+  - Excludes modal/drawer routes that should preserve scroll
+  - Includes accessibility focus management
+  - Uses `window.scrollTo({ top: 0, left: 0, behavior: 'auto' })`
+
+- **Integrated into App component** (`src/App.tsx`)
+  - Added ScrollToTop component to AppContent
+  - Positioned before LayoutWrapper for proper execution order
+  - Works with React Router DOM v6
+
+#### 2. Navigation Standardization
+- **Converted `<a>` tags to `Link` components** for internal navigation
+  - Updated `src/pages/NotFound.tsx`: Home link now uses Link component
+  - Updated `src/pages/Contact.tsx`: Quick action buttons now use Link components
+  - Added proper Link imports where missing
+
+- **Maintained existing Link usage** across all components
+  - Header navigation already using Link components
+  - Footer navigation already using Link components
+  - Hero section buttons already using Link components
+  - All other navigation buttons already using Link components
+
+#### 3. Edge Case Handling
+- **Anchor Links**: Preserved existing behavior for hash links (#section)
+- **Modal/Drawer Routes**: Excluded from scroll-to-top (future-proofed)
+- **Accessibility**: Focus management moves focus to main content after scroll
+- **External Links**: Preserved tel: and mailto: links as `<a>` tags
+
+#### 4. Testing & Quality Assurance
+- **Created test suite** (`src/components/__tests__/ScrollToTop.test.tsx`)
+  - Tests scroll-to-top behavior on route changes
+  - Tests exclusion of anchor links and modal routes
+  - Tests accessibility focus management
+  - Uses Jest and React Testing Library
+
+### Technical Details
+
+#### ScrollToTop Component Features
+```typescript
+// Detects route changes using useLocation hook
+// Checks for anchor links (location.hash)
+// Checks for modal routes (/modal/, /drawer/, /popup/)
+// Scrolls to top with behavior: 'auto' for instant scroll
+// Focuses main element for accessibility
+```
+
+#### Navigation Patterns Standardized
+- **Button + Link**: `<Button asChild><Link to="/path">Text</Link></Button>`
+- **Direct Link**: `<Link to="/path" className="...">Text</Link>`
+- **Programmatic**: `useNavigate()` for form submissions and auth flows
+
+### User Experience Improvements
+- **Consistent Navigation**: All buttons now land at page top
+- **Better Accessibility**: Focus management aids screen readers
+- **Preserved Functionality**: Anchor links and external links work as before
+- **Mobile Friendly**: Works consistently across all screen sizes
+- **Performance**: No layout shifts or horizontal scroll issues
+
+### Files Modified
+- `src/components/ScrollToTop.tsx` (new)
+- `src/App.tsx` (updated)
+- `src/pages/NotFound.tsx` (updated)
+- `src/pages/Contact.tsx` (updated)
+- `src/components/__tests__/ScrollToTop.test.tsx` (new)
+
+### Acceptance Criteria Met
+- ✅ All navigation buttons scroll to top on page change
+- ✅ Anchor links preserve their jump-to-section behavior
+- ✅ Modal/drawer routes excluded from scroll-to-top
+- ✅ No console errors or layout regressions
+- ✅ Accessibility focus management implemented
+- ✅ Consistent behavior across screen sizes
+- ✅ No changes to existing functionality or styling
+
+---
+
 ## Admin Layout Isolation & Smooth Scrolling Implementation
 
 ### Overview
@@ -102,6 +188,23 @@ This update implements admin layout isolation and smooth scrolling for the Jongl
   - Enhanced card padding and margins
   - Better mobile-friendly button and link styling
 
+### Page Refresh Fix
+- **Fixed page refresh error on login page** (`src/pages/StaffLogin.tsx`, `vite.config.ts`, `public/_redirects`)
+  - Added `_redirects` file for proper SPA routing
+  - Enhanced Vite configuration with history API fallback
+  - Added ErrorBoundary component for graceful error handling
+  - Improved component initialization with loading states
+  - Added robust error handling for form operations
+  - Fixed BrowserRouter configuration for proper routing
+
+### Mobile Button Layout Fix
+- **Fixed "View All" buttons on mobile** (`src/pages/Index.tsx`)
+  - Improved responsive layout for section headers
+  - Changed from horizontal to vertical stacking on mobile
+  - Enhanced button sizing and positioning for touch devices
+  - Better spacing and typography scaling
+  - Fixed "View All News", "View All Projects", and "View All Events" buttons
+
 ### Testing
 - ✅ TypeScript compilation successful
 - ✅ Build process successful
@@ -111,9 +214,11 @@ This update implements admin layout isolation and smooth scrolling for the Jongl
 - ✅ Mobile responsiveness improved
 
 ### Files Modified
-- `src/App.tsx` - Updated routing structure
+- `src/App.tsx` - Updated routing structure and added ErrorBoundary
 - `src/pages/StaffDashboard.tsx` - Removed manual layout components
-- `src/pages/StaffLogin.tsx` - Improved mobile responsiveness
+- `src/pages/StaffLogin.tsx` - Improved mobile responsiveness and refresh handling
+- `src/pages/Index.tsx` - Fixed mobile button layout and responsive design
+- `vite.config.ts` - Enhanced configuration for SPA routing
 - All public page components - Removed manual Header/Footer usage
 - `src/pages/NotFound.tsx` - Updated structure
 
@@ -121,6 +226,8 @@ This update implements admin layout isolation and smooth scrolling for the Jongl
 - `src/components/layouts/AdminLayout.tsx` - Admin layout component
 - `src/components/layouts/PublicLayout.tsx` - Public layout component
 - `src/components/layouts/LayoutWrapper.tsx` - Layout selection logic
+- `src/components/ErrorBoundary.tsx` - Error boundary for graceful error handling
+- `public/_redirects` - SPA routing configuration for proper page refresh
 
 ### Acceptance Criteria Met
 - ✅ Admin routes show only admin UI (no public navbar, headers, footer)

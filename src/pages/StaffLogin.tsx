@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -24,8 +24,19 @@ const StaffLogin = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [loginAttempts, setLoginAttempts] = useState(0);
+  const [isInitialized, setIsInitialized] = useState(false);
   const { toast } = useToast();
   const navigate = useNavigate();
+
+  // Initialize component safely
+  useEffect(() => {
+    try {
+      setIsInitialized(true);
+    } catch (error) {
+      console.error('Error initializing StaffLogin:', error);
+      setIsInitialized(true); // Still show the form even if there's an error
+    }
+  }, []);
 
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginFormSchema),
@@ -33,7 +44,8 @@ const StaffLogin = () => {
       email: "",
       password: "",
       rememberMe: false,
-    }
+    },
+    mode: "onChange", // Enable real-time validation
   });
 
   const onSubmit = async (data: LoginFormValues) => {
@@ -99,6 +111,18 @@ const StaffLogin = () => {
   };
 
   const isAccountLocked = loginAttempts >= 5;
+
+  // Show loading state while initializing
+  if (!isInitialized) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center p-3 sm:p-6 lg:p-8">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-3 sm:p-6 lg:p-8">

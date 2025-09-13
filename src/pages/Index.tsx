@@ -120,16 +120,16 @@ const Index = () => {
         {/* Featured News Section */}
         <section className="gov-section">
           <div className="gov-container">
-            <div className="flex items-center justify-between mb-12">
-              <div>
-                <h2 className="font-display text-3xl font-bold text-foreground mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 sm:mb-12 gap-4 sm:gap-6">
+              <div className="flex-1">
+                <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground mb-2 sm:mb-4">
                   Latest News & Updates
                 </h2>
-                <p className="text-xl text-muted-foreground">
+                <p className="text-lg sm:text-xl text-muted-foreground">
                   Stay informed about government initiatives and community developments
                 </p>
               </div>
-              <Button variant="outline" className="google-hover-lift" asChild>
+              <Button variant="outline" className="google-hover-lift w-full sm:w-auto self-start sm:self-auto" asChild>
                 <Link to="/news">
                   View All News
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -183,16 +183,16 @@ const Index = () => {
         {/* Active Projects Section */}
         <section className="gov-section bg-gradient-subtle texture-subtle">
           <div className="gov-container">
-            <div className="flex items-center justify-between mb-12">
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 sm:mb-12 gap-4 sm:gap-6">
+              <div className="flex-1">
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2 sm:mb-4">
                   Active Development Projects
                 </h2>
-                <p className="text-xl text-muted-foreground">
+                <p className="text-lg sm:text-xl text-muted-foreground">
                   Track progress on major infrastructure and development initiatives
                 </p>
               </div>
-              <Button variant="outline" asChild>
+              <Button variant="outline" className="w-full sm:w-auto self-start sm:self-auto" asChild>
                 <Link to="/projects">
                   View All Projects
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -263,16 +263,16 @@ const Index = () => {
         {/* Upcoming Events Section */}
         <section className="gov-section">
           <div className="gov-container">
-            <div className="flex items-center justify-between mb-12">
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 sm:mb-12 gap-4 sm:gap-6">
+              <div className="flex-1">
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2 sm:mb-4">
                   Upcoming Events & Activities
                 </h2>
-                <p className="text-xl text-muted-foreground">
+                <p className="text-lg sm:text-xl text-muted-foreground">
                   Join government meetings, training programs, and community events
                 </p>
               </div>
-              <Button variant="outline" asChild>
+              <Button variant="outline" className="w-full sm:w-auto self-start sm:self-auto" asChild>
                 <Link to="/events">
                   View All Events
                   <ArrowRight className="ml-2 h-4 w-4" />
